@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/ranking.css">
+    <link rel="icon" href="img/logo-fmtm-2.ico">
+    <title>Ranking</title>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <a href="index.html"><img src="img/logo-fmtm-main.jpg" alt="LogoFmtmt" class="nav-item-img"></a>
+            <span class="nav-toggle">&#9776;</span>
+            <div class="nav-menu">
+                <a href="ranking.html" class="nav-item">RANKING</a>
+                <a href="torneos.html" class="nav-item">TORNEOS</a>
+                <a href="reglamento.html" class="nav-item">REGLAMENTO</a>
+                <a href="contacto.html" class="nav-item">CONTACTO</a>
+            </div>
+        </div>    
+    </header>
+    <br><br>
+    <section class="ranking-container">
+        <article class="ranking">
+            <h2>Regatas N°1</h2>
+            <div class="ranking-categorias">
+                <h1>CATEGORIAS</h1>
+                <p>PRIMERA</p>
+                <p>SEGUNDA</p>
+                <p>TERCERA</p>
+                <p>CUARTA</p>
+                <p>QUINTA</p>
+            </div>
+            <br>
+            <a class="Descargar" href="media/Ranking.xlsx" download="Descargar ranking">DESCARGAR</a>
+        </article>
+        <article class="ranking">
+            <h2>Ranking 2</h2>
+            <p>Categorias: Quinta, Cuarta, Tercera, Segunda y Primera</p>
+        </article>
+        <article class="ranking">
+            <h2>Ranking 3</h2>
+            <p>Categorias: Quinta, Cuarta, Tercera, Segunda y Primera</p>
+        </article>
+    </section>
+    <footer>
+        <h1>Footer</h1>
+    </footer>
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

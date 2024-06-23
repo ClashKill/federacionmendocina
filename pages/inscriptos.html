@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .players-list-top {
+    background-color: black;
+    padding: 1rem;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    margin: auto;
+    max-width: 100%;
+}
+.players {
+    position: relative;
+    color: white;
+    height: 12rem;
+    width: calc(100% / 4 - 1rem);
+    box-shadow: .5rem .5rem rgba(97, 79, 79, 0.5);
+    flex: 0 0 100%;
+}
+.players>img {
+    position: absolute;
+    clip-path: circle();
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 0 10%;
+    top: 1rem;
+    left: 0;
+    width: 100px;
+    height: 100px;
+}
+.rk {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font: normal normal normal 5vw normal sans-serif;
+}
+.number-rk {
+    position: absolute;
+    top: 1.8rem;
+    right: 1rem;
+    font: normal normal bold 11vw normal sans-serif;
+}
+.name {
+    position: absolute;
+    left: 0;
+    top: 7.6rem;
+    font: normal normal normal 5.5vw normal sans-serif;;
+}
+.club {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+}
+.club>img {
+    width: 5vw;
+    height: 5vw;
+}
+.name-club {
+    font-size: 5vw;
+}
+.puntos {
+    position: absolute;
+    right: 1rem;
+    top: 4.5rem;
+    font-size: 5vw;
+}
+@media (min-width: 576px) { 
+    .players {
+        flex: 0 0 50%;
+    }
+    .players>img {
+        position: absolute;
+        clip-path: circle();
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: 0 10%;
+        top: .5rem;
+        left: 0;
+        width: 100px;
+        height: 100px;
+    }
+    .rk {
+        position: absolute;
+        top: .5rem;
+        right: 1rem;
+        font: normal normal normal 1rem normal sans-serif;
+    }
+    .number-rk {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font: normal normal bold 1rem normal sans-serif;
+    }
+    .name {
+        position: absolute;
+        left: 0;
+        top: 11rem;
+        font: normal normal normal 1rem normal sans-serif;;
+    }
+    .club {
+        position: absolute;
+        bottom: .5rem;
+        left: 0;
+        font-size: 1rem;
+        font-family: sans-serif;
+        font-weight: 600;
+    }
+    .puntos {
+        position: absolute;
+        right: 1rem;
+        top: 4rem;
+    }
+ }
+
+@media (min-width: 768px) { 
+    .players {
+        flex: 0 0 calc(100% / 3 - 1rem);
+    }
+ }
+
+@media (min-width: 992px) { 
+    .players {
+        flex: 0 0 calc(100% / 4 - 1rem);
+    }
+ }
+
+@media (min-width: 1200px) { 
+    .players {
+        flex: 0 0 calc(100% / 4 - 1rem);
+    }
+ }
+
+@media (min-width: 1400px) { 
+
+ }
+.players span>img {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    background-color: black;
+}
+/* flex-shrink: 2 Esto es lo contrario que el flex-grow, si vos aumentas un valor se vuelve mas chico el item*/
+/* flex-basis: 100px esto significa que el width va a ser de 100px*/
+/* flex: grow shrink basis SHORTHAND*/
+.container-image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: max-content;
+    background-color: black;
+    align-items: center;
+    align-content: center;
+    padding: 1rem;
+}
+.item-image {
+    border: thick solid black;
+    height: 16rem;
+    width: calc(100% / 3);
+    height: max-content;
+}
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+.container-img {
+    width: 100%;
+    height: max-content;
+}
+@media (min-width: 1024px) {
+    .container-img {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .item-img {
+        flex: 0 0 50%;
+    }
+    .order-1 {
+        order: 1;
+    }
+}
+</style>
+<body>
+    <section class="players-list-top">
+        <article class="players">
+            <h1>Ranking #1</h1>
+            <p>Baltazar GALLARDO</p>
+            <address>ARGENTINA</address>
+        </article>
+        <article class="players">
+            <img src="https://wttsimfiles.blob.core.windows.net/wtt-media/photos/400px/105649_Headshot_R_MA_Long.png" alt="ma-long">
+            <span class="rk">RK</span>
+            <span class="number-rk">#2</span>
+            <span class="name"><b>GALLARDO</b> Baltazar</span>
+            <span class="puntos"><b>1400</b> Puntos</span>
+            <div class="club"><img src="https://regatasmendoza.com.ar/wp-content/uploads/cmr_square_bl_x2.png" alt="regatas"><span class="name-club">CMR</span></div>
+        </article>
+        <article class="players">
+            <h1>Ranking #3</h1>
+            <p>Jugador 3</p>
+            <address>ARGENTINA</address>
+        </article>
+        <article class="players">
+            <h1>Ranking #4</h1>
+            <p>Jugador 4</p>
+            <address>ARGENTINA</address>
+        </article>
+        <article class="players">
+            <h1>Ranking #5</h1>
+            <p>Jugador 5</p>
+            <address>ARGENTINA</address>
+        </article>
+        <article class="players">
+            <h1>Ranking #6</h1>
+            <p>Jugador 6</p>
+            <address>ARGENTINA</address>
+        </article>
+        <article class="players">
+            <h1>Ranking #7</h1>
+            <p>Jugador 7</p>
+            <address>ARGENTINA</address>
+        </article>
+        <article class="players">
+            <h1>Ranking #8</h1>
+            <p>Jugador 8</p>
+            <address>ARGENTINA</address>
+        </article>
+    </section>
+</body>
+</html>

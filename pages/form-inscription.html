@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/form-incription.css">
+    <title>Formulario de Inscripción</title>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <a href="index.html"><img src="/img/logo-fmtm-main.jpg" alt="LogoFmtmt" class="nav-item-img"></a>
+            <button class="nav-toggle">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/ranking.html">RANKING</a></li>
+                    <li><a href="/torneos.html">TORNEOS</a></li>
+                    <li><a href="/reglamento.html">REGLAMENTO</a></li>
+                    <li><a href="/contacto.html">CONTACTO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="form-container">
+            <h1>Formulario de Inscripción</h1>
+            <form action="https://formspree.io/f/[YOUR_FORM_ID]" method="post" id="inscripcion-form">
+                <label for="nombre">Nombre y Apellido:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+                
+                <fieldset>
+                    <legend>Categorías</legend>
+                    <div class="categoria">
+                        <input type="checkbox" id="primera" name="categoria[]" value="primera">
+                        <label for="primera">Primera</label>
+                        <span class="fecha-horario">Sábado 23 a las 17hs</span>
+                    </div>
+                    <div class="categoria">
+                        <input type="checkbox" id="segunda" name="categoria[]" value="segunda">
+                        <label for="segunda">Segunda</label>
+                        <span class="fecha-horario">Domingo 24 a las 15hs</span>
+                    </div>
+                    <div class="categoria">
+                        <input type="checkbox" id="tercera" name="categoria[]" value="tercera">
+                        <label for="tercera">Tercera</label>
+                        <span class="fecha-horario">Sábado 30 a las 18hs</span>
+                    </div>
+                    <div class="categoria">
+                        <input type="checkbox" id="cuarta" name="categoria[]" value="cuarta">
+                        <label for="cuarta">Cuarta</label>
+                        <span class="fecha-horario">Domingo 31 a las 16hs</span>
+                    </div>
+                    <div class="categoria">
+                        <input type="checkbox" id="quinta" name="categoria[]" value="quinta">
+                        <label for="quinta">Quinta</label>
+                        <span class="fecha-horario">Sábado 6 a las 14hs</span>
+                    </div>
+                </fieldset>
+
+                <div class="precio-container">
+                    <label>Precio Total:</label>
+                    <span id="precio-total">$0</span>
+                </div>
+
+                <label for="metodo-pago">Método de Pago:</label>
+                <select id="metodo-pago" name="metodo-pago" required>
+                    <option value="efectivo">Efectivo</option>
+                    <option value="transferencia">Transferencia</option>
+                </select>
+
+                <div id="info-transferencia" style="display: none;">
+                    <h3>Detalles para Transferencia:</h3>
+                    <p>Nombre: [TU NOMBRE Y APELLIDO]</p>
+                    <p>Alias: [TU ALIAS]</p>
+                    <p>CVU: [TU CVU]</p>
+                    <p>Banco Destino: [NOMBRE DEL BANCO]</p>
+                </div>
+                
+                <button type="submit">Inscribirse</button>
+            </form>
+
+            <p class="advice">
+                <strong>Nota Importante:</strong> En caso de no abonar, no podrá participar en el torneo siguiente.
+            </p>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-bar nav');
+
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('nav-open');
+            });
+
+            // Calcula el precio total basado en las categorías seleccionadas
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const precioTotal = document.getElementById('precio-total');
+            const metodoPagoSelect = document.getElementById('metodo-pago');
+            const infoTransferencia = document.getElementById('info-transferencia');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    let precio = 0;
+                    checkboxes.forEach(cb => {
+                        if (cb.checked) {
+                            precio += 4000;
+                        }
+                    });
+
+                    // Aplica descuentos por cantidad de categorías seleccionadas
+                    if (precio > 4000) {
+                        precio -= 2000; // Descuento por seleccionar más de una categoría
+                    }
+
+                    precioTotal.textContent = `$${precio}`;
+                });
+            });
+
+            metodoPagoSelect.addEventListener('change', () => {
+                if (metodoPagoSelect.value === 'transferencia') {
+                    infoTransferencia.style.display = 'block';
+                } else {
+                    infoTransferencia.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

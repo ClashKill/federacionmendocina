@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contacto.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <a href="index.html"><img src="/img/logo-fmtm-main.jpg" alt="LogoFmtmt" class="nav-item-img"></a>
+            <button class="nav-toggle" aria-label="Abrir menú de navegación">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-menu">
+                <a href="ranking.html" class="nav-item">RANKING</a>
+                <a href="torneos.html" class="nav-item">TORNEOS</a>
+                <a href="reglamento.html" class="nav-item">REGLAMENTO</a>
+                <a href="contacto.html" class="nav-item">CONTACTO</a>
+            </nav>
+        </div>    
+    </header>
+    <div class="card">
+        <span class="title">Deja un comentario</span>
+        <form class="form" action="https://formspree.io/f/{your_form_id}" method="POST">
+            <div class="group">
+                <input type="text" id="name" name="name" placeholder="‎" required>
+                <label for="name">Nombre</label>
+            </div>
+            <div class="group">
+                <input type="email" id="email" name="email" placeholder="‎" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="group">
+                <textarea id="comment" name="comment" rows="5" placeholder="‎" required></textarea>
+                <label for="comment">Comentario</label>
+            </div>
+            <button type="submit">ENVIAR</button>
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

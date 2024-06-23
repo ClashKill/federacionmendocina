@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/torneos.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <a href="index.html"><img src="/img/logo-fmtm-main.jpg" alt="LogoFmtmt" class="nav-item-img"></a>
+            <nav>
+                <a href="ranking.html" class="nav-item">RANKING</a>
+                <a href="torneos.html" class="nav-item">TORNEOS</a>
+                <a href="reglamento.html" class="nav-item">REGLAMENTO</a>
+                <a href="contacto.html" class="nav-item">CONTACTO</a>
+            </nav>
+            <button class="nav-toggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+        </div>    
+    </header>
+    <main>
+        <div class="events-container">
+            <div class="events-container-2">
+                <img src="img/logo-fmtm-2.jpg" alt="logo-fmtm" class="events-image-logo-fmtm">
+                <h1 class="events-comence-in">COMIENZA EN</h1>
+                <div id="countdown">
+                    <h1 id="time" class="cuenta-regresiva"></h1>
+                    <p class="cuenta-regresiva-2">DIAS    HORAS    MINUTOS    SEGUNDOS</p>
+                </div>
+                <h1 class="extra-bold"><i>CAMPEONATO REGATAS N°1</i></h1>
+                <h2 class="event-date">28 JUN - 29 JUN</h2>
+                <h3 class="event-categories">CATEGORIAS</h3>
+                <p class="event-categories-list">TODO COMPETIDOR <br> PRIMERA <br> SEGUNDA <br> TERCERA <br> CUARTA <br> QUINTA</p>
+                <img src="img/cmr-logotipo.png" alt="Logotipo CMR" class="cmr-logo">
+                <a href="pages/tournament.html" class="event-boton-inscribirse">INSCRIBIRME<a>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-bar nav').classList.toggle('nav-open');
+        });
+
+        // Temporizador
+        const countdown = () => {
+            const countDate = new Date('June 28, 2024 09:08:00').getTime();
+            const now = new Date().getTime();
+            const gap = countDate - now;
+
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const textDay = Math.floor(gap / day);
+            const textHour = Math.floor((gap % day) / hour);
+            const textMinute = Math.floor((gap % hour) / minute);
+            const textSecond = Math.floor((gap % minute) / second);
+
+            document.getElementById('time').innerText = `${textDay}d ${textHour}h ${textMinute}m ${textSecond}s`;
+
+            if (gap < 0) {
+                clearInterval(timer);
+                document.getElementById('time').innerText = "¡El torneo ha comenzado!";
+            }
+        };
+
+        const timer = setInterval(countdown, 1000);
+    </script>
+</body>
+</html>
