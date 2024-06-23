@@ -146,6 +146,7 @@ aside > a:hover {
         <a href="inscriptos.html">INSCRIPTOS <span class="timer-container"><span class="label">Disponible en</span><span id="timer-inscriptos" class="timer"></span></span></a>
         <a href="zonas.html">ZONAS <span class="timer-container"><span class="label">Disponible en</span><span id="timer-zonas" class="timer"></span></span></a>
         <a href="resultados.html">RESULTADOS <span class="timer-container"><span class="label">Disponible en</span><span id="timer-resultados" class="timer"></span></span></a>
+        <a href="resultados.html">RESULTADOS <span class="timer-container"><span class="label">Disponible en</span><span id="timer-cronograma" class="timer"></span></span></a>
     </aside>
     <main>
         <!-- Contenido principal de la página -->
@@ -189,11 +190,14 @@ aside > a:hover {
         const inscriptosEndTime = '2024-07-05T12:00:00'; // yyyy-MM-ddTHH:mm:ss
         const zonasEndTime = '2024-07-10T18:00:00'; // yyyy-MM-ddTHH:mm:ss
         const resultadosEndTime = '2024-07-15T09:00:00'; // yyyy-MM-ddTHH:mm:ss
+        const cronogramaEndTime = '2024-07-15T09:00:00'; // yyyy-MM-ddTHH:mm:ss
+
 
         startTimer(inscribirseEndTime, 'timer-inscribirse');
         startTimer(inscriptosEndTime, 'timer-inscriptos');
         startTimer(zonasEndTime, 'timer-zonas');
         startTimer(resultadosEndTime, 'timer-resultados');
+        startTimer(cronogramaEndTime, 'timer-cronograma');
     </script>
 </body>
 </html>
