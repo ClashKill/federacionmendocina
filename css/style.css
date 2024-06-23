@@ -190,10 +190,19 @@ footer > h1 {
         display: none;
         flex-direction: column;
         width: 100%;
+        background-color: black; /* Fondo negro cuando se despliega */
+        padding: 1rem; /* Añade padding para que los enlaces no estén pegados al borde */
     }
 
     .nav-menu.active {
         display: flex;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 1rem; /* Añade padding para mayor área clicable */
+        background-color: black; /* Fondo negro para los enlaces */
     }
 
     .image {
